@@ -2,6 +2,8 @@
 #include <fstream>
 using namespace std;
 
+// https://www.pbinfo.ro/probleme/985/cifre11
+
 int v_int[10000];
 int v_suma[10]; // suma vectorilor de aparitii
 
