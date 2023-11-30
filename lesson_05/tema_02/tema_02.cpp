@@ -1,20 +1,51 @@
-// tema_02.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <fstream>
+#include <bits/stdc++.h>
+using namespace std;
+int v[10001];
 
-int main()
-{
-    std::cout << "Hello World!\n";
+int main() {
+    ifstream fin("pozitiex.in");
+    ofstream fout("pozitiex.out");
+    int n,x;
+    bool found = false;
+    fin >> x >> n;
+    for (int i = 0; i < n; i++) {
+        fin >> v[i];
+    }
+    int a;
+    //sortam vectorul
+    sort(v,v+n); // sortam vectorul folosind functia rapida
+
+//     for (int i = 0; i < n-1; i++) {
+//        for (int j = i+1; j < n; j++) {
+//            if(v[i] > v[j])
+//            {
+//                a = v[i];
+//                v[i] = v[j];
+//                v[j] = a;
+//            }
+//        }
+//    }
+    int left = 0;
+    int right = n-1;
+    int middle = 0;
+    while (left <= right) {
+        middle = (right+left) / 2;
+        if (x == v[middle]) {
+            found = true;
+            // pozitia din vectorul ordonat cu index 0
+            fout << middle + 1;
+            break;
+        }
+        if (x > v[middle]) {
+            left = middle + 1;
+        }
+        else {
+            right = middle - 1;
+        }
+    }
+    if (!found) {
+        fout << "NU EXISTA";
+    }
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
