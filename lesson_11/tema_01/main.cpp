@@ -2,6 +2,8 @@
 #include <fstream>
 
 using namespace std;
+
+// https://www.pbinfo.ro/probleme/2356/pinguini
 int main() {
     ifstream fin ("../pinguini.in");
     ofstream fout ("../pinguini.out");

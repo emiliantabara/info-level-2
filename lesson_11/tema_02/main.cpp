@@ -2,6 +2,8 @@
 #include <algorithm>
 using namespace std;
 
+// https://www.pbinfo.ro/probleme/2239/pow2
+
 int main()
 {
     int n;
