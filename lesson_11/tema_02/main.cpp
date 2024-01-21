@@ -22,7 +22,7 @@ int main()
     }
 
     // sortare sir crescator
-    std::sort(v, v + n);
+    sort(v, v + n);
 
     int perechi = 0;
     for (int i = 0; i < n - 1; i++) { // n pasi
